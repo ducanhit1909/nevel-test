@@ -5,7 +5,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 
-// Sample images for the slider
 const images = [
   "/images/slider-banner.png",
   "/images/slider-banner.png",

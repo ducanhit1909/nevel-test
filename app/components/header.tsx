@@ -1,21 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
 
 const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false); // State to manage mobile menu visibility
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
     <header className="absolute top-0 left-0 w-full z-10 header-bg opacity-80">
       <div className="w-full max-w-7xl mx-auto flex justify-between items-center p-4">
         <div className="w-20">
-          <Image
+          <img
             src="/images/logo.png"
             alt="GTech Logo"
             width={128}
             height={25}
-            priority
           />
         </div>
 
