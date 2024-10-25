@@ -22,15 +22,11 @@ This project uses [`next/font`](https://nextjs.org/docs/app/building-your-applic
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![image](https://github.com/user-attachments/assets/a9f2faaf-2ddc-4446-88a8-9ba396df631b)
+![image](https://github.com/user-attachments/assets/295179f4-a63e-420b-908f-6ce80eb7258d)
+![image](https://github.com/user-attachments/assets/6b27cfd0-b327-4f01-9331-f6f016b4e57d)
+![image](https://github.com/user-attachments/assets/fb7961ab-0a97-49b8-8a73-3871300fb80d)
+![image](https://github.com/user-attachments/assets/1e3337e7-ce95-4eaa-8cba-0de3d0e280c4)
+![image](https://github.com/user-attachments/assets/cebeedaf-3f4d-41de-bb2d-20ba55ffbd2d)
+![image](https://github.com/user-attachments/assets/f57f327c-a749-450c-9085-7267eeb58d79)
+![image](https://github.com/user-attachments/assets/04e3ed42-4738-4fae-aa03-3aa3f9ed00ad)
