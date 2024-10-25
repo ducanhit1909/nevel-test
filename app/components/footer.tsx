@@ -60,7 +60,7 @@ const Footer: React.FC = () => {
                 "Partners",
               ].map((item) => (
                 <li key={item}>
-                  <Link href={`/${item.toLowerCase()}`} legacyBehavior>
+                  <Link href="#" legacyBehavior>
                     <a className="leading-6 text-gray-400 hover:text-gray-900">
                       {item}
                     </a>
@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
               ].map((item) => (
                 <li key={item}>
                   <Link
-                    href={`/${item.toLowerCase().replace(" ", "-")}`}
+                    href="#"
                     legacyBehavior
                   >
                     <a className="leading-6 text-gray-400 hover:text-gray-900">
@@ -102,7 +102,7 @@ const Footer: React.FC = () => {
                 (item) => (
                   <li key={item}>
                     <Link
-                      href={`/${item.toLowerCase().replace(" ", "-")}`}
+                      href="#"
                       legacyBehavior
                     >
                       <a className="leading-6 text-gray-400 hover:text-gray-900">
@@ -121,7 +121,7 @@ const Footer: React.FC = () => {
               {["Relax Gaming", "Leander Games"].map((item) => (
                 <li key={item}>
                   <Link
-                    href={`/${item.toLowerCase().replace(" ", "-")}`}
+                    href="#"
                     legacyBehavior
                   >
                     <a className="leading-6 text-gray-400 hover:text-gray-900">

@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import DropdownFilter from "./dropdown-filter";
+import { usePathname } from "next/navigation";
+import UnderConstructionModal from "./modals/under-construction";
 
 interface Game {
   title: string;
@@ -25,39 +27,57 @@ const hotGames: Game[] = [
   },
 ];
 
+const mapPathName: Record<string, string> = {
+  "/": "Hot Games",
+  "/timeline": "Timeline",
+  "/all-games": "All Games",
+};
+
 const HotGames: React.FC = () => {
+  const path = usePathname();
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const toggleModal = () => setShowModal(!showModal);
+
+  const onViewGame = () => {
+    setShowModal(true);
+  };
+
   return (
     <section>
       <div className="flex justify-between my-4">
         <h2 className="text-2xl md:text-3xl font-semibold mb-5 text-center md:text-left">
-          Hot Game
+          {mapPathName[path] || ""}
         </h2>
         <div className="hidden md:flex">
           <img
             className="w-6 h-6 cursor-pointer"
             src="/images/previous-icon.png"
             alt="Previous"
+            onClick={toggleModal}
           />
           <img
             className="w-6 h-6 cursor-pointer"
             src="/images/next-icon.png"
             alt="Next"
+            onClick={toggleModal}
           />
         </div>
         <div className="md:hidden">
           <DropdownFilter />
         </div>
       </div>
+
       <div className="hidden md:grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {hotGames.map((game, index) => (
+        {hotGames.map((game) => (
           <div
-            key={index}
+            key={game.title}
             className="bg-white shadow-lg rounded-lg overflow-hidden"
           >
             <img
               src={game.image}
               alt={game.title}
               className="w-full h-64 object-cover"
+              loading="lazy"
             />
             <div className="p-5">
               <div className="flex items-start space-x-4">
@@ -65,6 +85,7 @@ const HotGames: React.FC = () => {
                   className="w-20 h-20 rounded-lg object-cover"
                   src={game.avatar}
                   alt={game.title}
+                  loading="lazy"
                 />
                 <div className="flex-1">
                   <div className="text-lg font-bold">{game.title}</div>
@@ -73,7 +94,10 @@ const HotGames: React.FC = () => {
                   </p>
                 </div>
                 <div className="mt-4 text-right">
-                  <button className="border rounded-lg text-black py-2 px-4 hover:bg-gray-100 transition">
+                  <button
+                    className="border rounded-lg text-black py-2 px-4 hover:bg-gray-100 transition"
+                    onClick={onViewGame}
+                  >
                     View
                   </button>
                 </div>
@@ -82,12 +106,14 @@ const HotGames: React.FC = () => {
           </div>
         ))}
       </div>
+
       <div className="md:hidden grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div className="bg-white shadow-lg rounded-lg overflow-hidden">
           <img
             src="/images/mask-group.png"
             alt="Mask Group"
             className="w-full h-48 object-cover"
+            loading="lazy"
           />
           <div className="p-5 card-bg">
             <div className="flex items-start space-x-4">
@@ -95,6 +121,7 @@ const HotGames: React.FC = () => {
                 className="w-20 h-20 rounded-lg object-cover"
                 src="/images/mask-group-avatar.png"
                 alt="Mask Group Avatar"
+                loading="lazy"
               />
               <div className="flex-1">
                 <div className="text-lg font-bold text-white">
@@ -122,6 +149,7 @@ const HotGames: React.FC = () => {
           </div>
         </div>
       </div>
+      <UnderConstructionModal show={showModal} handleClose={toggleModal} />
     </section>
   );
 };

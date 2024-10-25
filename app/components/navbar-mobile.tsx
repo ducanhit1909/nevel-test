@@ -1,33 +1,59 @@
-import React from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import React, { useState } from "react";
+import UnderConstructionModal from "./modals/under-construction";
 
 const NavbarMobile: React.FC = () => {
+  const path = usePathname();
+
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const handleClose = () => setShowModal(false);
+
   return (
     <div className="md:hidden flex justify-between border-b px-2">
-      <div className="text-xs flex flex-col items-center mr-2 py-4">
+      <Link
+        href="/"
+        className={`text-xs flex flex-col items-center mr-1 py-4 ${
+          path === "/" ? "text-black" : "text-gray-300"
+        }`}
+      >
         <img
           className="w-8 h-8 object-cover"
           src="/images/home-icon.png"
           alt="Category Icon"
         />
         HOME
-      </div>
-      <div className="text-xs flex flex-col items-center mr-1 py-4">
+      </Link>
+      <Link
+        href="/timeline"
+        className={`text-xs flex flex-col items-center mr-1 py-4 ${
+          path === "/timeline" ? "text-black" : "text-gray-300"
+        }`}
+      >
         <img
           className="w-8 h-8 object-cove"
           src="/images/timeline-icon.png"
           alt="Category Icon"
         />
         TIMELINE
-      </div>
-      <div className="text-xs flex flex-col items-center mr-1 text-center py-4">
+      </Link>
+      <Link
+        href="/all-games"
+        className={`text-xs flex flex-col items-center mr-1 py-4 ${
+          path === "/all-games" ? "text-black" : "text-gray-300"
+        }`}
+      >
         <img
           className="w-8 h-8 object-cover"
           src="/images/all-game-icon.png"
           alt="Category Icon"
         />
         ALL GAMES
-      </div>
-      <div className="text-xs flex flex-col items-center mr-2 py-4">
+      </Link>
+      <div
+        className="text-xs flex flex-col items-center mr-2 py-4"
+        onClick={() => setShowModal(true)}
+      >
         <svg
           className="w-8 h-8 text-gray-500"
           fill="none"
@@ -44,7 +70,10 @@ const NavbarMobile: React.FC = () => {
         </svg>
         SEARCH
       </div>
-      <div className="text-xs flex flex-col items-center border-l pl-2 py-4">
+      <div
+        className="text-xs flex flex-col items-center border-l pl-2 py-4"
+        onClick={() => setShowModal(true)}
+      >
         <img
           className="w-8 h-8 object-cover"
           src="/images/filter-icon.png"
@@ -52,6 +81,7 @@ const NavbarMobile: React.FC = () => {
         />
         FILTER
       </div>
+      <UnderConstructionModal show={showModal} handleClose={handleClose} />
     </div>
   );
 };

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
+import UnderConstructionModal from "./modals/under-construction";
 
 interface Category {
   color: string;
@@ -30,6 +31,9 @@ const categories: Category[] = [
 ];
 
 const HottestCategory: React.FC = () => {
+  const [showModal, setShowModal] = useState<boolean>(false);
+  const toggleModal = () => setShowModal(!showModal);
+
   return (
     <section className="mt-10">
       <div className="flex justify-between">
@@ -41,11 +45,13 @@ const HottestCategory: React.FC = () => {
             className="w-6 h-6 cursor-pointer"
             src="/images/previous-icon.png"
             alt="Previous"
+            onClick={toggleModal}
           />
           <img
             className="w-6 h-6 cursor-pointer"
             src="/images/next-icon.png"
             alt="Next"
+            onClick={toggleModal}
           />
         </div>
       </div>
@@ -73,11 +79,13 @@ const HottestCategory: React.FC = () => {
                     className="w-full h-auto rounded"
                     src="/images/avatar-1.png"
                     alt="Avatar 1"
+                    onClick={toggleModal}
                   />
                   <img
                     className="w-full h-auto rounded"
                     src="/images/avatar-2.png"
                     alt="Avatar 2"
+                    onClick={toggleModal}
                   />
                 </div>
               </div>
@@ -184,7 +192,10 @@ const HottestCategory: React.FC = () => {
       </div>
 
       <div className="md:hidden my-8">
-        <button className="border w-full rounded-lg bg-gray-100 text-black p-4 flex justify-center">
+        <button
+          className="border w-full rounded-lg bg-gray-100 text-black p-4 flex justify-center"
+          onClick={() => setShowModal(true)}
+        >
           Load More
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -202,6 +213,7 @@ const HottestCategory: React.FC = () => {
           </svg>
         </button>
       </div>
+      <UnderConstructionModal show={showModal} handleClose={toggleModal} />
     </section>
   );
 };
