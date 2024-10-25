@@ -3,7 +3,7 @@ import React from "react";
 const NavbarMobile: React.FC = () => {
   return (
     <div className="md:hidden flex justify-between border-b px-2">
-      <div className="flex flex-col items-center mr-2 py-4">
+      <div className="text-xs flex flex-col items-center mr-2 py-4">
         <img
           className="w-8 h-8 object-cover"
           src="/images/home-icon.png"
@@ -11,7 +11,7 @@ const NavbarMobile: React.FC = () => {
         />
         HOME
       </div>
-      <div className="flex flex-col items-center mr-1 py-4">
+      <div className="text-xs flex flex-col items-center mr-1 py-4">
         <img
           className="w-8 h-8 object-cove"
           src="/images/timeline-icon.png"
@@ -19,7 +19,7 @@ const NavbarMobile: React.FC = () => {
         />
         TIMELINE
       </div>
-      <div className="flex flex-col items-center mr-1 text-center py-4">
+      <div className="text-xs flex flex-col items-center mr-1 text-center py-4">
         <img
           className="w-8 h-8 object-cover"
           src="/images/all-game-icon.png"
@@ -27,7 +27,7 @@ const NavbarMobile: React.FC = () => {
         />
         ALL GAMES
       </div>
-      <div className="flex flex-col items-center mr-2 py-4">
+      <div className="text-xs flex flex-col items-center mr-2 py-4">
         <svg
           className="w-8 h-8 text-gray-500"
           fill="none"
@@ -44,7 +44,7 @@ const NavbarMobile: React.FC = () => {
         </svg>
         SEARCH
       </div>
-      <div className="flex flex-col items-center border-l pl-2 py-4">
+      <div className="text-xs flex flex-col items-center border-l pl-2 py-4">
         <img
           className="w-8 h-8 object-cover"
           src="/images/filter-icon.png"

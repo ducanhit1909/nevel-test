@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const DropdownFilter: React.FC = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [selectedOption, setSelectedOption] = useState<string>("Release Date");
+  const [selectedOption, setSelectedOption] = useState<string>("Option 1");
 
   const toggleDropdown = () => setIsOpen(!isOpen);
   const handleOptionClick = (option: string) => {
@@ -15,7 +15,7 @@ const DropdownFilter: React.FC = () => {
       <div>
         <button
           type="button"
-          className="inline-flex justify-between w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
+          className="font-semibold inline-flex justify-between w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none"
           onClick={toggleDropdown}
         >
           {selectedOption}
@@ -39,7 +39,7 @@ const DropdownFilter: React.FC = () => {
       {isOpen && (
         <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
           <div
-            className="py-1"
+            className="py-1 font-semibold"
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="options-menu"
@@ -48,9 +48,9 @@ const DropdownFilter: React.FC = () => {
               href="#"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               role="menuitem"
-              onClick={() => handleOptionClick("Release Date")}
+              onClick={() => handleOptionClick("Option 1")}
             >
-              Release Date
+              Option 1
             </a>
             <a
               href="#"
@@ -58,7 +58,7 @@ const DropdownFilter: React.FC = () => {
               role="menuitem"
               onClick={() => handleOptionClick("Option 2")}
             >
-              Release Date
+              Option 2
             </a>
             <a
               href="#"
@@ -66,7 +66,7 @@ const DropdownFilter: React.FC = () => {
               role="menuitem"
               onClick={() => handleOptionClick("Option 3")}
             >
-              Release Date
+              Option 3
             </a>
           </div>
         </div>

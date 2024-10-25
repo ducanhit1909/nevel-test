@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './components/header';
 import Banner from './components/banner';
 import Container from './components/container';
+import Footer from './components/footer';
 
 const Home: React.FC = () => {
   return (
@@ -9,6 +10,7 @@ const Home: React.FC = () => {
       <Header />
       <Banner />
       <Container />
+      <Footer />
     </main>
   );
 };

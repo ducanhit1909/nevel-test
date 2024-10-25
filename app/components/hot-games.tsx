@@ -29,7 +29,7 @@ const HotGames: React.FC = () => {
   return (
     <section>
       <div className="flex justify-between my-4">
-        <h2 className="text-2xl md:text-3xl font-bold mb-5 text-center md:text-left">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-5 text-center md:text-left">
           Hot Game
         </h2>
         <div className="hidden md:flex">
