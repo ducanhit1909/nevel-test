@@ -1,31 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import DropdownFilter from "./dropdown-filter";
 import { usePathname } from "next/navigation";
-import UnderConstructionModal from "./modals/under-construction";
-
-interface Game {
-  title: string;
-  description: string;
-  image: string;
-  avatar: string;
-}
-
-const hotGames: Game[] = [
-  {
-    title: "Mahjong Ways",
-    description:
-      "4TECH™ has just launched their very first Mahjong inspired slot machine gam…",
-    image: "/images/mahjong-ways.png",
-    avatar: "/images/mahjong-ways-avatar.png",
-  },
-  {
-    title: "Wild Bandito",
-    description:
-      "Águila which means ‘The Eagle’ is a three-person Mexican bandit team that is activ…",
-    image: "/images/wild-bandito.png",
-    avatar: "/images/wild-bandito-avatar.png",
-  },
-];
+import DetailHotGameModal from "./modals/detail-hot-game";
+import { Game, hotGames } from "../utils";
+import Image from "next/image";
 
 const mapPathName: Record<string, string> = {
   "/": "Hot Games",
@@ -37,10 +15,24 @@ const HotGames: React.FC = () => {
   const path = usePathname();
   const [showModal, setShowModal] = useState<boolean>(false);
   const toggleModal = () => setShowModal(!showModal);
+  const [data, setData] = useState<Game[]>(hotGames.slice(0, 2));
+  const [gameSelected, setGameSelected] = useState<Game>();
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
-  const onViewGame = () => {
+  const totals = hotGames.length;
+
+  const onViewGame = (game: Game) => {
     setShowModal(true);
+    setGameSelected(game);
   };
+
+  const handleNext = () => {};
+
+  const handlePrev = () => {};
+
+  useEffect(() => {
+    setData(hotGames.slice(currentIndex, currentIndex + 2));
+  }, [currentIndex]);
 
   return (
     <section>
@@ -49,17 +41,21 @@ const HotGames: React.FC = () => {
           {mapPathName[path] || ""}
         </h2>
         <div className="hidden md:flex">
-          <img
+          <Image
             className="w-6 h-6 cursor-pointer"
             src="/images/previous-icon.png"
             alt="Previous"
-            onClick={toggleModal}
+            onClick={handlePrev}
+            width={100}
+            height={200}
           />
-          <img
+          <Image
             className="w-6 h-6 cursor-pointer"
             src="/images/next-icon.png"
             alt="Next"
-            onClick={toggleModal}
+            onClick={handleNext}
+            width={100}
+            height={200}
           />
         </div>
         <div className="md:hidden">
@@ -68,7 +64,7 @@ const HotGames: React.FC = () => {
       </div>
 
       <div className="hidden md:grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {hotGames.map((game) => (
+        {data.map((game) => (
           <div
             key={game.title}
             className="bg-white shadow-lg rounded-lg overflow-hidden"
@@ -96,7 +92,7 @@ const HotGames: React.FC = () => {
                 <div className="mt-4 text-right">
                   <button
                     className="border rounded-lg text-black py-2 px-4 hover:bg-gray-100 transition"
-                    onClick={onViewGame}
+                    onClick={() => onViewGame(game)}
                   >
                     View
                   </button>
@@ -149,7 +145,11 @@ const HotGames: React.FC = () => {
           </div>
         </div>
       </div>
-      <UnderConstructionModal show={showModal} handleClose={toggleModal} />
+      <DetailHotGameModal
+        show={showModal}
+        handleClose={toggleModal}
+        data={gameSelected}
+      />
     </section>
   );
 };
