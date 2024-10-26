@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import DropdownFilter from "./dropdown-filter";
 import { usePathname } from "next/navigation";
-import UnderConstructionModal from "./modals/under-construction";
 
 interface Game {
   title: string;
@@ -53,13 +52,11 @@ const HotGames: React.FC = () => {
             className="w-6 h-6 cursor-pointer"
             src="/images/previous-icon.png"
             alt="Previous"
-            onClick={toggleModal}
           />
           <img
             className="w-6 h-6 cursor-pointer"
             src="/images/next-icon.png"
             alt="Next"
-            onClick={toggleModal}
           />
         </div>
         <div className="md:hidden">
@@ -149,7 +146,6 @@ const HotGames: React.FC = () => {
           </div>
         </div>
       </div>
-      <UnderConstructionModal show={showModal} handleClose={toggleModal} />
     </section>
   );
 };

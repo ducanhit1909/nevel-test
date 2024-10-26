@@ -1,13 +1,9 @@
+import React  from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
-import UnderConstructionModal from "./modals/under-construction";
 
 const NavbarMobile: React.FC = () => {
   const path = usePathname();
-
-  const [showModal, setShowModal] = useState<boolean>(false);
-  const handleClose = () => setShowModal(false);
 
   return (
     <div className="md:hidden flex justify-between border-b px-2">
@@ -81,7 +77,6 @@ const NavbarMobile: React.FC = () => {
         />
         FILTER
       </div>
-      <UnderConstructionModal show={showModal} handleClose={handleClose} />
     </div>
   );
 };

@@ -1,18 +1,13 @@
-import React, { useState } from "react";
-import UnderConstructionModal from "./modals/under-construction";
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const Navbar: React.FC = () => {
   const path = usePathname();
 
-  const [showModal, setShowModal] = useState<boolean>(false);
-
-  const handleClose = () => setShowModal(false);
-
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      setShowModal(true);
+      // event search
     }
   };
 
@@ -91,7 +86,6 @@ const Navbar: React.FC = () => {
           </li>
         </ul>
       </div>
-      <UnderConstructionModal show={showModal} handleClose={handleClose} />
     </>
   );
 };
