@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
           <input
             type="text"
             placeholder="Search"
-            className="ml-2 w-full bg-transparent outline-none text-gray-700 font-semibold"
+            className="ml-2 w-full bg-transparent outline-none text-gray-700"
             onKeyDown={handleKeyDown}
           />
         </div>
