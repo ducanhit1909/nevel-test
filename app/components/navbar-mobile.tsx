@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -46,10 +46,7 @@ const NavbarMobile: React.FC = () => {
         />
         ALL GAMES
       </Link>
-      <div
-        className="text-xs flex flex-col items-center mr-2 py-4"
-        onClick={() => setShowModal(true)}
-      >
+      <div className="text-xs flex flex-col items-center mr-2 py-4">
         <svg
           className="w-8 h-8 text-gray-500"
           fill="none"
@@ -66,10 +63,7 @@ const NavbarMobile: React.FC = () => {
         </svg>
         SEARCH
       </div>
-      <div
-        className="text-xs flex flex-col items-center border-l pl-2 py-4"
-        onClick={() => setShowModal(true)}
-      >
+      <div className="text-xs flex flex-col items-center border-l pl-2 py-4">
         <img
           className="w-8 h-8 object-cover"
           src="/images/filter-icon.png"
