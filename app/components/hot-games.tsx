@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import DropdownFilter from "./dropdown-filter";
 import { usePathname } from "next/navigation";
 
@@ -34,8 +34,6 @@ const mapPathName: Record<string, string> = {
 
 const HotGames: React.FC = () => {
   const path = usePathname();
-  const [showModal, setShowModal] = useState<boolean>(false);
-  const toggleModal = () => setShowModal(!showModal);
 
   const onViewGame = () => {
     setShowModal(true);

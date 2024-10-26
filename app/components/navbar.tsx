@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
           <input
             type="text"
             placeholder="Search"
-            className="ml-2 w-full bg-transparent outline-none text-gray-700"
+            className="ml-2 w-full bg-transparent outline-none text-gray-700 font-semibold"
             onKeyDown={handleKeyDown}
           />
         </div>
@@ -71,9 +71,7 @@ const Navbar: React.FC = () => {
             <Link
               href="/all-games"
               className={`flex items-center ${
-                path === "/all-games"
-                  ? "text-black"
-                  : "text-gray-300"
+                path === "/all-games" ? "text-black" : "text-gray-300"
               }`}
             >
               <img
