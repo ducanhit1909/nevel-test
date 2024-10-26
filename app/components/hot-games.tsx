@@ -35,10 +35,6 @@ const mapPathName: Record<string, string> = {
 const HotGames: React.FC = () => {
   const path = usePathname();
 
-  const onViewGame = () => {
-    setShowModal(true);
-  };
-
   return (
     <section>
       <div className="flex justify-between my-4">
@@ -89,10 +85,7 @@ const HotGames: React.FC = () => {
                   </p>
                 </div>
                 <div className="mt-4 text-right">
-                  <button
-                    className="border rounded-lg text-black py-2 px-4 hover:bg-gray-100 transition"
-                    onClick={onViewGame}
-                  >
+                  <button className="border rounded-lg text-black py-2 px-4 hover:bg-gray-100 transition">
                     View
                   </button>
                 </div>
