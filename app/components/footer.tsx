@@ -82,7 +82,7 @@ const Footer: React.FC = () => {
             ].map((item) => (
               <li key={item}>
                 <Link
-                  href={`/${item.toLowerCase().replace(" ", "-")}`}
+                  href="#"
                   legacyBehavior
                 >
                   <a className="text-gray-400 text-[11.81px] font-normal leading-[12px] text-left">
@@ -103,7 +103,7 @@ const Footer: React.FC = () => {
               (item) => (
                 <li key={item}>
                   <Link
-                    href={`/${item.toLowerCase().replace(" ", "-")}`}
+                    href="#"
                     legacyBehavior
                   >
                     <a className="text-gray-400 text-[11.81px] font-normal leading-[12px] text-left">
@@ -125,7 +125,7 @@ const Footer: React.FC = () => {
             {["Relax Gaming", "Leander Games"].map((item) => (
               <li key={item}>
                 <Link
-                  href={`/${item.toLowerCase().replace(" ", "-")}`}
+                  href="#"
                   legacyBehavior
                 >
                   <a className="text-gray-400 text-[11.81px] font-normal leading-[12px] text-left">
