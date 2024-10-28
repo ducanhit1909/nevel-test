@@ -1,11 +1,18 @@
-import React from "react";
-import Container from "./components/container";
+// pages/index.tsx
+import React from 'react';
+import Header from './components/Header';
+import Banner from './components/Banner';
+import Footer from './components/Footer';
+import Container from './components/Container';
 
 const Home: React.FC = () => {
   return (
-    <main className="font-pingFang text-base font-normal">
+    <div className="font-pingFang text-base font-normal">
+      <Header />
+      <Banner />
       <Container />
-    </main>
+      <Footer />
+    </div>
   );
 };
 

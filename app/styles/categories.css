@@ -1,0 +1,30 @@
+#wiper-categories-mobi {
+    overflow: visible !important;
+}
+
+#wiper-categories-mobi .swiper-pagination {
+    bottom: -40px !important;
+}
+
+#wiper-categories-mobi .swiper-slide-active {
+    margin: 0 10px 0 10px;
+}
+
+#wiper-categories-mobi .swiper-pagination-bullet-active {
+  width: 10px !important;
+  height: 10px !important;
+  background: #9b9b9b !important;
+  border: 1px solid #9b9b9b !important;
+}
+
+#wiper-categories-mobi .swiper-pagination-bullet-active::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  margin-left: -9px;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #9b9b9b;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
