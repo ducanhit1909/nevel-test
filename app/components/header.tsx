@@ -4,15 +4,14 @@ import React, { useState } from "react";
 import Image from "next/image";
 
 const Header: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false); // State to manage mobile menu visibility
-  const [activeMenu, setActiveMenu] = useState<string>("GAMES"); // State to track active menu
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string>("GAMES");
 
   const menuItems = ["HOME", "GAMES", "MATCH", "COMPANY", "EVENTS", "PARTNERS"];
 
   return (
     <header className="absolute top-0 left-0 w-full z-10 header-bg opacity-80">
       <div className="w-full max-w-7xl mx-auto flex justify-between items-center p-4">
-        {/* Logo */}
         <div className="w-20">
           <Image
             src="/logo.png"
@@ -23,7 +22,6 @@ const Header: React.FC = () => {
           />
         </div>
 
-        {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-6 text-[15px] font-normal tracking-[0.5px] text-left text-white/50">
           {menuItems.map((item) => (
             <li
@@ -40,7 +38,6 @@ const Header: React.FC = () => {
           ))}
         </ul>
 
-        {/* Mobile Hamburger Icon */}
         <div className="md:hidden">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -64,7 +61,6 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {isOpen && (
         <ul className="md:hidden bg-gray-900 text-white flex flex-col items-center space-y-6 py-4">
           {menuItems.map((item) => (
@@ -73,7 +69,7 @@ const Header: React.FC = () => {
                 href="#"
                 onClick={() => {
                   setActiveMenu(item);
-                  setIsOpen(false); // Optional: Close menu after selecting an item
+                  setIsOpen(false);
                 }}
                 className={`${
                   activeMenu === item ? "text-white" : "text-white/50"

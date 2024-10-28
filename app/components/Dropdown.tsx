@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Dropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState('Release Date');
+  const [selectedOption, setSelectedOption] = useState("Release Date");
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -23,9 +23,22 @@ const Dropdown: React.FC = () => {
         >
           {selectedOption}
           <div className="flex items-center ml-3">
-            <span className="mr-1 text-[7.97px] font-semibold leading-[26px]">AZ</span>
-            <svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+            <span className="mr-1 text-[7.97px] font-semibold leading-[26px]">
+              AZ
+            </span>
+            <svg
+              className="w-4 h-4"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M19 9l-7 7-7-7"
+              />
             </svg>
           </div>
         </button>
@@ -33,12 +46,17 @@ const Dropdown: React.FC = () => {
 
       {isOpen && (
         <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-          <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
+          <div
+            className="py-1"
+            role="menu"
+            aria-orientation="vertical"
+            aria-labelledby="options-menu"
+          >
             <a
               href="#"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               role="menuitem"
-              onClick={() => handleOptionClick('Release Date')}
+              onClick={() => handleOptionClick("Release Date")}
             >
               Release Date
             </a>
@@ -46,7 +64,7 @@ const Dropdown: React.FC = () => {
               href="#"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               role="menuitem"
-              onClick={() => handleOptionClick('Option 2')}
+              onClick={() => handleOptionClick("Option 2")}
             >
               Release Date
             </a>
@@ -54,7 +72,7 @@ const Dropdown: React.FC = () => {
               href="#"
               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               role="menuitem"
-              onClick={() => handleOptionClick('Option 3')}
+              onClick={() => handleOptionClick("Option 3")}
             >
               Release Date
             </a>

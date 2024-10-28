@@ -1,4 +1,3 @@
-// components/Footer.tsx
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +6,6 @@ const Footer: React.FC = () => {
   return (
     <footer className="mt-4 py-10 border-t">
       <div className="hidden w-full max-w-7xl mx-auto px-4 md:flex justify-between">
-        {/* Logo Column */}
         <div className="flex flex-col items-start w-[30%]">
           <div className="w-20">
             <Image src="/logo-footer.png" alt="Logo" width={50} height={100} />
@@ -16,7 +14,6 @@ const Footer: React.FC = () => {
             Valletta Buildings, South Street, <br />
             Valletta - VLT 1103 Malta
           </p>
-          {/* Social Icons */}
           <div className="flex space-x-3 py-6">
             <a href="#" aria-label="Twitter">
               <Image
@@ -45,7 +42,6 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Web Map Column */}
         <div>
           <h5 className="text-[13.23px] font-semibold leading-[14px] text-left text-black mb-2">
             WEB MAP
@@ -71,7 +67,6 @@ const Footer: React.FC = () => {
           </ul>
         </div>
 
-        {/* About Us Column */}
         <div>
           <h5 className="text-[13.23px] font-semibold leading-[14px] text-left text-black mb-2">
             ABOUT US
@@ -99,7 +94,6 @@ const Footer: React.FC = () => {
           </ul>
         </div>
 
-        {/* Events Column */}
         <div>
           <h5 className="text-[13.23px] font-semibold leading-[14px] text-left text-black mb-2">
             EVENTS
