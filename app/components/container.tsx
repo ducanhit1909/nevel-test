@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import HotGames from "./HotGames";
-import HottestCategory from "./Categories";
-import Navbar from "./Navbar";
-import NavbarMobi from "./NavbarMobi";
+import Navbar from "./navbar";
+import NavbarMobi from "./narbar-mobile";
+import HotGames from "./hot-games";
+import HottestCategory from "./hottest-category";
 
 const Container: React.FC = () => {
   return (

@@ -1,9 +1,8 @@
 import React from "react";
-import Banner from "./components/Banner";
-import Container from "./components/Container";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-
+import Header from "./components/header";
+import Banner from "./components/banner";
+import Footer from "./components/footer";
+import Container from "./components/container";
 
 const Home: React.FC = () => {
   return (
