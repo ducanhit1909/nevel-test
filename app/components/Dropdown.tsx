@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Dropdown: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("Release Date");
+  const [selectedOption, setSelectedOption] = useState("Option 1");
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -58,7 +58,7 @@ const Dropdown: React.FC = () => {
               role="menuitem"
               onClick={() => handleOptionClick("Release Date")}
             >
-              Release Date
+              Option 1
             </a>
             <a
               href="#"
@@ -66,7 +66,7 @@ const Dropdown: React.FC = () => {
               role="menuitem"
               onClick={() => handleOptionClick("Option 2")}
             >
-              Release Date
+              Option 2
             </a>
             <a
               href="#"
@@ -74,7 +74,7 @@ const Dropdown: React.FC = () => {
               role="menuitem"
               onClick={() => handleOptionClick("Option 3")}
             >
-              Release Date
+              Option 3
             </a>
           </div>
         </div>
