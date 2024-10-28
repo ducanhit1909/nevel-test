@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
               "Partners",
             ].map((item) => (
               <li key={item}>
-                <Link href={`/${item.toLowerCase()}`} legacyBehavior>
+                <Link href="#" legacyBehavior>
                   <a className="text-gray-400 text-[11.81px] font-normal leading-[12px] text-left">
                     {item}
                   </a>
